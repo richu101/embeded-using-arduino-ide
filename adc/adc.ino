@@ -17,6 +17,6 @@ void loop()
     ADCSRA |= (1<<ADSC);
     loop_until_bit_is_clear(ADCSRA,ADSC);
     adcval = ADCH;
-    Serial.println(adcval);
-    delay(1);    
+    Serial.println("adcval");
+    delay(100);    
 }
