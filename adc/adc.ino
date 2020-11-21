@@ -6,10 +6,16 @@ static inline void adc0init(void)
 }
 void setup() 
 {
+    uint16_t adcval;
     adc0init();
+    Serial.begin(9600);
 }
 
 void loop() 
 {
-    
+    ADCSRA |= (1<<ADCSC);
+    loop_until_bit_is_clear(ADCSRA,ADSC);
+    adcval = ADCH;
+    Serial.println(adcval);
+    delay(1);    
 }
