@@ -1,6 +1,7 @@
-static inline void adc0init(void)
+static inline void adc0init(uint8_t cha)
 {
-    ADMUX  |= (1<<REFS0);     // Refference voltage on avcc               
+    ADMUX  |= (1<<REFS0);     // Refference voltage on avcc             
+    ADMUX  |= (0xf0 & ADMUX) | cha // set which chnnel we need to start conversion 
     ADCSRA |= (1<<ADPS2) | (1<<ADPS1) | (1<<ADPS0); //set adc clock at 125 Khz
     ADCSRA |= (1<<ADEN);    //enable the adc
     ADMUX  |= (1<<ADLAR);   // left adjust the result
