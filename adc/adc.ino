@@ -28,7 +28,7 @@ void setup()
 
 void loop() 
 {
-    Serial.println(readadc(1));
+    Serial.println(readadc(1)); //printing the adc value serialy
     delay(1);    
 }
 
