@@ -16,6 +16,25 @@ uint16_t readadc(uint8_t ch)
 
   return(ADC>>6);  
 }
+
+  uint16_t adcval;
+void setup() 
+{
+  
+    adc0init();
+    // adcfrnit();
+    Serial.begin(9600);
+}
+
+void loop() 
+{
+    Serial.println(readadc(1));
+    delay(1);    
+}
+
+
+
+
 /* static inline void adcfrnit(void)    // initilize adc free running mode
 {
     ADMUX  |= (1<<REFS0);     // Refference voltage on avcc               
@@ -29,19 +48,3 @@ uint16_t readadc(uint8_t ch)
 
 }
 */
-  uint16_t adcval;
-void setup() 
-{
-  
-    adc0init();
-    // adcfrnit();
-    Serial.begin(9600);
-}
-
-void loop() 
-{
-     
- 
-    Serial.println(readadc(1));
-    delay(1);    
-}
