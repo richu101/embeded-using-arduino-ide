@@ -1,7 +1,10 @@
 
 ISR(INT0_vect)
 {
-    if (PINE &= ~(1<<4))
+    // PORTB |= (1 << 7);
+    // delay(500);
+    
+    if (PINE & (0<<4))
     {
         PORTB |= (1 << 7);
     }
@@ -9,6 +12,7 @@ ISR(INT0_vect)
     {
         PORTB |= (0 << 7);
     }
+    
 }
 
 void intrrept_init()
