@@ -1,37 +1,41 @@
-
-ISR(INT0_vect)
+ISR(INT4_vect)
 {
-    // PORTB |= (1 << 7);
-    // delay(500);
-    
-    if (PINE & (0<<4))
+    if (bit_is_set(PINE,4))
     {
         PORTB |= (1 << 7);
     }
     else
     {
-        PORTB |= (0 << 7);
+        PORTB &= ~(1 << 7);
     }
     
 }
 
-void intrrept_init()
+
+
+void intrrept_init(void)
 {
-    EIMSK |= (1<<INT0);
-    EICRA |= (1<<ISC00);
+    EIMSK |= (1<<INT4);
+    EICRB |= (1<<ISC40);
     sei();
 }
+
 
 void setup()
 {
 
-    DDRB |= (1 << 7) | (1 << 6);
-    PORTE |= (1 << 3); //enabling the internal pull up
+    DDRB |= 0xff; // set DDRB pins as 
+    DDRE |= (0<<2)  | (0<<3);
+    PORTE |= (1<<4) ; //enabling the internal pull up
     intrrept_init();
 }
 
 void loop()
 {
-    PORTB ^= (1<<6);
-    delay(1000);
+     delay(100);
+     PORTB ^= (1<<6);
+    
+   
 }
+
+
