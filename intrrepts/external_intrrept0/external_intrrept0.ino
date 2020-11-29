@@ -3,8 +3,10 @@ ISR(INT4_vect)
     if (bit_is_set(PINE,4))
     {
         PORTB |= (1 << 7);
-        _delay_ms(1000);
+        _delay_ms(500);
         Serial.print("am in the intrrept");
+        PORTB &= (0 << 7);
+        _delay_ms(500)
     }
     else
     {
