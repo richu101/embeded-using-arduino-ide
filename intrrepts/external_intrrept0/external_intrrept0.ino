@@ -3,16 +3,16 @@ ISR(INT4_vect)
     if (bit_is_set(PINE,4))
     {
         PORTB |= (1 << 7);
-        delay(1000);
+        _delay_ms(1000);
+        Serial.print("am in the intrrept");
     }
     else
     {
         PORTB &= ~(1 << 7);
+        Serial.print("0");
     }
     
 }
-
-
 
 void intrrept_init(void)
 {
@@ -24,7 +24,7 @@ void intrrept_init(void)
 
 void setup()
 {
-
+    Serial.begin(9600);
     DDRB |= 0xff; // set DDRB pins as 
     DDRE |= (0<<2)  | (0<<3);
      //PORTE |= (1<<4) ; //enabling the internal pull up
