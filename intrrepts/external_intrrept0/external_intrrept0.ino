@@ -4,7 +4,7 @@ ISR(INT4_vect)
     {
         PORTB |= (1 << 7);
         _delay_ms(500);
-        Serial.println("am in the intrrept");
+        Serial.println("1");
         PORTB &= (0 << 7);
         _delay_ms(500);
     }
