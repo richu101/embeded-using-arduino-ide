@@ -29,7 +29,7 @@ void setup()
     Serial.begin(9600);
     DDRB |= 0xff; // set DDRB pins as 
     DDRE |= (0<<2)  | (0<<3);
-     //PORTE |= (1<<4) ; //enabling the internal pull up
+     //enabling the internal pull up
     intrrept_init();
 }
 
