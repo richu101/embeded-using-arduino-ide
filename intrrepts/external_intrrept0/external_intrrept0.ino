@@ -4,14 +4,14 @@ ISR(INT4_vect)
     {
         PORTB |= (1 << 7);
         _delay_ms(500);
-        Serial.print("am in the intrrept");
+        Serial.println("am in the intrrept");
         PORTB &= (0 << 7);
-        _delay_ms(500)
+        _delay_ms(500);
     }
     else
     {
         PORTB &= ~(1 << 7);
-        Serial.print("THe button is off");
+        Serial.print("0");
     }
     
 }
