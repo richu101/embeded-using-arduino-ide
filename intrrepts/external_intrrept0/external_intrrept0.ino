@@ -31,7 +31,7 @@ void setup()
     DDRB |= 0xff; // set DDRB pins as 
     DDRE |= (0<<2)  | (0<<3);
      //PORTE |= (1<<4) ; //enabling the internal pull up
-    //desabled the intrrepts
+   
     intrrept_init();
     
 }
