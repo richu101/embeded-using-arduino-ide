@@ -40,6 +40,7 @@ void loop()
 {
      delay(1000);
      PORTB ^= (1<<6);
+     Serial.println("main loop");
     
 }
 
