@@ -23,4 +23,22 @@ arduino-cli  upload -b arduino:avr:mega --port /dev/ttyACM1
 
  git commit -am " commit message"
 
+
  # git remote init
+
+##  …or create a new repository on the command line
+
+
+echo "# python-text-to-voice" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/richu101/python-text-to-voice.git
+git push -u origin main
+                
+ ## …or push an existing repository from the command line
+
+git remote add origin https://github.com/richu101/python-text-to-voice.git
+git branch -M main
+git push -u origin main
