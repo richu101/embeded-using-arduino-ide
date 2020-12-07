@@ -22,3 +22,5 @@ arduino-cli  upload -b arduino:avr:mega --port /dev/ttyACM1
 ## command to stage and commit
 
  git commit -am " commit message"
+
+ # git remote init
