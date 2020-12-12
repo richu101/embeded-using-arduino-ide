@@ -1,6 +1,53 @@
+#include <Arduino.h>
 
-void setup() {
+#define pind2 PINE
+#define pind3 PINE
+#define pind4 PING
+#define pind5 PINE
+
+#define portd6 PORTH
+#define portd7 PORTH
+#define portd8 PORTH
+#define portd9 PORTH
+
+#define d2 PE4
+#define d3 PE5
+#define d4 PG5
+#define d5 PE3
+#define d6 PH3
+#define d7 PH4
+#define d8 PH5
+#define d9 PH6
+void setup() 
+{
+
+    DDRE |= (0<<d2) | (0<<d3) | (0<<d5);
+    DDRG |= (0<<d4);
+    DDRH |= (1<<d6) | (1<<d7) | (1<<d8) | (1<<d9);
+    Serial.begin(9600);
+
 }
 
-void loop() {
+void loop() 
+{
+
+if( ((pind4 & (1<<d4)) )  //
+{ 
+  Serial.println("l");
+}
+
+if((pind2 & (1 << d2)) ) // when pind4 enter the black line this fynction work 
+{
+  Serial.println("r");
+  _delay_ms(10);
+}
+else if((pind4 & (1 << d4)) && ~(pind5 & (1 << d5))) // when pind5 enter the black line this fynction work 
+{
+  Serial.println("f");
+  portd6 |= (1<<d6);
+  portd7 &= ~(1<<d7);
+  portd8 &= ~(1<<d8);
+  portd9 |= (1<<d9);
+  _delay_ms(10);
+}
 }
