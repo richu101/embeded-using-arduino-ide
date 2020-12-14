@@ -21,22 +21,30 @@
 void setup()
 {
 
-  DDRE |= (0 << d2) | (0 << d3) | (0 << d5);
-  DDRG |= (0 << d4);
-  DDRH |= (1 << d6) | (1 << d7) | (1 << d8) | (1 << d9);
-  Serial.begin(9600);
+    DDRE |= (0 << d2) | (0 << d3) | (0 << d5);
+    DDRG |= (0 << d4);
+    DDRH |= (1 << d6) | (1 << d7) | (1 << d8) | (1 << d9);
+    Serial.begin(9600);
 }
 
 void loop()
 {
 
-if( ((pind2 & (1<<d2)) )  //
+if((pind2 & (1<<d2)))  //
 {
     Serial.println("a");
     _delay_ms(5);
 }
 
-if((pind3 & (1 << d3)) ) // when pind4 enter the black line this fynction work 
+
+
+if((pind2 & (1<<d2)))  //
+{
+    Serial.println("a");
+    _delay_ms(5);
+}
+
+else if((pind3 & (1 << d3)) ) // when pind4 enter the black line this fynction work 
 {
     Serial.println("b");
     _delay_ms(5);
@@ -51,4 +59,5 @@ else if((pind5 & (1 << d5))) // when pind5 enter the black line this fynction wo
     Serial.println("d");
     _delay_ms(5);
 }
+
 }
