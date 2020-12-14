@@ -55,7 +55,7 @@ else if((pind4 & (1 << d4))) // when pind5 enter the black line this fynction wo
 }
 else if((pind5 & (1 << d5))) // when pind5 enter the black line this fynction work 
 {
-    Serial.print("d");
+    Serial.print("c");
     _delay_ms(5);
 }
 
