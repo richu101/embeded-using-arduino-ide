@@ -32,31 +32,30 @@ void loop()
 
 if((pind2 & (1<<d2)))  //
 {
-    Serial.println("a");
+    Serial.print("a");
     _delay_ms(5);
 }
 
 
-
 if((pind2 & (1<<d2)))  //
 {
-    Serial.println("a");
+    Serial.print("a");
     _delay_ms(5);
 }
 
 else if((pind3 & (1 << d3)) ) // when pind4 enter the black line this fynction work 
 {
-    Serial.println("b");
+    Serial.print("b");
     _delay_ms(5);
 }
 else if((pind4 & (1 << d4))) // when pind5 enter the black line this fynction work 
 {
-    Serial.println("d");
+    Serial.print("d");
     _delay_ms(5);
 }
 else if((pind5 & (1 << d5))) // when pind5 enter the black line this fynction work 
 {
-    Serial.println("d");
+    Serial.print("d");
     _delay_ms(5);
 }
 
