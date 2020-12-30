@@ -1,12 +1,16 @@
+#include<avr/io.h>
+#include<util/delay.h>
 
-void setup() {
-    pinMode(12,OUTPUT);
-}
+int main(void)
+{
+    DDRB |= 0xff;
 
-void loop() {
-    digitalWrite(12,HIGH);
-    delay(1000);
-    digitalWrite(12,LOW);
-    delay(100);
-
+    while (1)
+    {
+        PORTB |= 0xff;
+        _delay_ms(1000);
+        PORTB = 0;
+        _delay_ms(1000);
+    }
+return 0;
 }
