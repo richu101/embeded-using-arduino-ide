@@ -10,8 +10,7 @@ arduino-cli  upload -b arduino:avr:mega --port /dev/ttyACM1
 
 # arduino-cli upload via usbasp
 
-arduino-cli upload
- --fqbn arduino:avr:uno --port /dev/ttyAMA0 --programmer usbasp
+arduino-cli upload --fqbn arduino:avr:uno --port /dev/ttyAMA0 --programmer usbasp
 
 ~ https://andreasrohner.at/posts/Electronics/How-to-fix-device-permissions-for-the-USBasp-programmer/ ~
 
