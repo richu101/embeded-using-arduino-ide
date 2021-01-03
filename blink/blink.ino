@@ -10,7 +10,7 @@ int main(void)
         PORTB |= 0xff;
         _delay_ms(1000);
         PORTB = 0;
-        _delay_ms(1000);
+        _delay_ms(100);
     }
 return 0;
 }

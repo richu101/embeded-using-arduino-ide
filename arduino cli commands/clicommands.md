@@ -17,7 +17,8 @@ arduino-cli upload --fqbn arduino:avr:uno --port /dev/ttyAMA0 --programmer usbas
 
 # firmware update
  
-avrdude -c avrisp -pm8 -b19200 -P /dev/ttyAMA0 -U flash:w:usbasp.atmega8.2011-05-28.hex -v
+ 
+avrdude -c usbasp -pm8 -b19200 -P /dev/ttyAMA0 -U flash:w:blink.ino.hex -v
 
 ## To open serial monitor
 
